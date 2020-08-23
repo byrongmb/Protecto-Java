@@ -60,4 +60,8 @@ public class Estudiante extends Persona{
         this.fechaFinalizacion = fechaFinalizacion;
         this.materaPorSemestres = materaPorSemestres;
     }
+    public Estudiante(){
+        
+    }
+    
 }
