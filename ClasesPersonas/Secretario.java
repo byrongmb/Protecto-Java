@@ -8,8 +8,7 @@ public class Secretario extends Persona{
     private Fecha fechaInicio = new Fecha();
     private int anioServicio;
     private Turno[] turnos = new Turno[2];
-    
-    /*Getters and Setters*/
+
     public Carrera getCarrera() {
         return carrera;
     }
@@ -42,15 +41,14 @@ public class Secretario extends Persona{
         this.turnos = turnos;
     }
 
-    public Secretario(String nombre, String apellido, String cedula, Fecha fechaNacimiento, String telefono,
-            String direccion, Carrera carrera, Fecha fechaInicio, int anioServicio) {
-        super(nombre, apellido, cedula, fechaNacimiento, telefono, direccion);
+    public Secretario(String codigo, String cedula, String nombre, String apellido, Fecha fechaNacimiento,
+            String telefono, String direccion, Carrera carrera, Fecha fechaInicio, int anioServicio) {
+        super(codigo, cedula, nombre, apellido, fechaNacimiento, telefono, direccion);
         this.carrera = carrera;
         this.fechaInicio = fechaInicio;
         this.anioServicio = anioServicio;
-
-        /*El secretario tiene turnos en la mañana y tarde*/
+        /*El secretario(a) tiene dos turnos*/
         turnos[0] = new Turno(1);
         turnos[1] = new Turno(2);
-    }    
+    }
 }

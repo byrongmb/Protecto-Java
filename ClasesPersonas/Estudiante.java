@@ -9,8 +9,7 @@ public class Estudiante extends Persona{
     private Fecha fechaInicio;
     private Fecha fechaFinalizacion;
     private int materaPorSemestres;
-    
-    /* Getters and Setters */
+
     public Carrera getCarrera() {
         return carrera;
     }
@@ -51,10 +50,10 @@ public class Estudiante extends Persona{
         this.materaPorSemestres = materaPorSemestres;
     }
 
-    public Estudiante(String nombre, String apellido, String cedula, Fecha fechaNacimiento, String telefono,
-            String direccion, Carrera carrera, int semestre, Fecha fechaInicio, Fecha fechaFinalizacion,
-            int materaPorSemestres) {
-        super(nombre, apellido, cedula, fechaNacimiento, telefono, direccion);
+    public Estudiante(String codigo, String cedula, String nombre, String apellido, Fecha fechaNacimiento,
+            String telefono, String direccion, Carrera carrera, int semestre, Fecha fechaInicio,
+            Fecha fechaFinalizacion, int materaPorSemestres) {
+        super(codigo, cedula, nombre, apellido, fechaNacimiento, telefono, direccion);
         this.carrera = carrera;
         this.semestre = semestre;
         this.fechaInicio = fechaInicio;

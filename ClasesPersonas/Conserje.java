@@ -9,7 +9,6 @@ public class Conserje extends Persona{
     private int anioServicio;
     private Turno[] turnos = new Turno[3];
 
-    /*Getters and Setters*/
     public Carrera getCarrera() {
         return carrera;
     }
@@ -34,26 +33,16 @@ public class Conserje extends Persona{
         this.anioServicio = anioServicio;
     }
 
-    public Turno[] getTurnos() {
-        return turnos;
-    }
-
-    public void setTurnos(Turno[] turnos) {
-        this.turnos = turnos;
-    }
-
-    public Conserje(String nombre, String apellido, String cedula, Fecha fechaNacimiento, String telefono,
-            String direccion, Carrera carrera, Fecha fechaInicio, int anioServicio) {
-        super(nombre, apellido, cedula, fechaNacimiento, telefono, direccion);
+    public Conserje(String codigo, String cedula, String nombre, String apellido, Fecha fechaNacimiento,
+            String telefono, String direccion, Carrera carrera, Fecha fechaInicio, int anioServicio) {
+        super(codigo, cedula, nombre, apellido, fechaNacimiento, telefono, direccion);
         this.carrera = carrera;
         this.fechaInicio = fechaInicio;
         this.anioServicio = anioServicio;
 
-        /*El conserje tiene turnos en la mañana, tarde y noche*/
+        /*El conserje tiene tres turnos*/
         turnos[0] = new Turno(1);
         turnos[1] = new Turno(2);
         turnos[2] = new Turno(3);
     }
-    
-    
 }
