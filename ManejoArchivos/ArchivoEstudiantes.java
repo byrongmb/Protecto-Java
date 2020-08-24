@@ -2,16 +2,17 @@ package ManejoArchivos;
 
 import java.io.*;
 import ClasesPersonas.Estudiante;
+import ClasesPersonas.Persona;
 
 public class ArchivoEstudiantes {
     private static File archivo = new File("../Recursos/Estudiantes.txt");
 
-    public static boolean guardar(Estudiante estudiante) {
+    public static boolean guardar(Persona persona) {
         boolean bandera = false;
         try {
             final FileOutputStream fos = new FileOutputStream(archivo);
             final ObjectOutputStream oss = new ObjectOutputStream(fos);
-            oss.writeObject(estudiante);
+            oss.writeObject(persona);
             bandera = true;
         } catch (final FileNotFoundException e) {
             try {
