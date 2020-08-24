@@ -1,20 +1,18 @@
 package ManejoArchivos;
-
 import java.io.*;
-import ClasesPersonas.Estudiante;
+import ClasesPersonas.*;
 
-public class ArchivoEstudiantes {
-    private static File archivo = new File("ManejoArchivos/Recursos/Estudiantes.txt");
+public class ArchivoProfesores {
+    private static File archivo = new File("ManejoArchivos/Recursos/Profesores.txt");
 
-    public static void guardar(Estudiante estudiante) {
+    public static void guardar(Profesor profesor) {
         try {
             if(!archivo.exists()){
                 archivo.createNewFile();
             }
-            System.out.println("Nombre: " + estudiante.getNombre());
             OutputStream os = new FileOutputStream(archivo, true);
             ObjectOutputStream oos = new ObjectOutputStream(os);
-            oos.writeObject(estudiante);
+            oos.writeObject(profesor);
             oos.close();
         } catch (FileNotFoundException e) {
             System.out.println("Error: " + e.getMessage());
@@ -27,18 +25,14 @@ public class ArchivoEstudiantes {
         try {
             InputStream is = new FileInputStream(archivo);
             ObjectInputStream ois = new ObjectInputStream(is);
-            Estudiante estudiante = (Estudiante) ois.readObject();
-            System.out.println("Nombre Estudiante: " + estudiante.getNombre());
-            System.out.println("Apellido Estudiante: " + estudiante.getApellido());
-            System.out.println("Codigo: " + estudiante.getCodigo());
-            
+            Profesor profesor = (Profesor) ois.readObject();
+            profesor.mostrar();
         } catch (FileNotFoundException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Error 1: " + e.getMessage());
         } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Error 2: " + e.getMessage());
         } catch (ClassNotFoundException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Error 3: " + e.getMessage());
         }
-
     }
 }

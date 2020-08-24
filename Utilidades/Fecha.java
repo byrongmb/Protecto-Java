@@ -1,8 +1,9 @@
 package Utilidades;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Fecha {
+public class Fecha implements Serializable{
     private int dia;
     private int mes;
     private int anio;

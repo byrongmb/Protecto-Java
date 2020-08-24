@@ -1,17 +1,61 @@
 package ClasesPersonas;
+import java.io.Serializable;
 import java.util.Scanner;
 
 import ClasesCarrera.Carrera;
 import ClasesCarrera.Turno;
+import ManejoArchivos.ArchivoCarrera;
 import ManejoArchivos.ArchivoEstudiantes;
 import Utilidades.Fecha;
 
-public class Secretario extends Persona{
+public class Secretario extends Persona implements Serializable{
     private Carrera carrera = new Carrera();
     private Fecha fechaInicio = new Fecha();
     private int anioServicio;
     private Turno[] turnos = new Turno[2];
 
+    public void elimiarEstudiante(String ID){
+
+    }
+    public void registrarProfesor(){/*
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("LLenar el siguiente formulario");
+        System.out.print("Codigo: ");
+        String codigo = teclado.nextLine();
+
+        System.out.print("Cedula: ");
+        String cedula = teclado.nextLine();
+
+        System.out.print("Nombre: ");
+        String nombre = teclado.nextLine();
+
+        System.out.print("Apellido: ");
+        String apellido = teclado.nextLine();
+
+        System.out.println("Fecha de Nacimiento");
+        System.out.print("Dia: ");
+        int dia = teclado.nextInt();
+        System.out.print("Mes: ");
+        int mes = teclado.nextInt();
+        System.out.print("Anio: ");
+        int anio = teclado.nextInt();
+        Fecha fechaNacimiento = new Fecha(dia, mes, anio);
+
+        System.out.print("Telefono: ");
+        String telefono = teclado.nextLine();
+
+        System.out.print("Direccion: ");
+        String direccion = teclado.nextLine();
+
+        System.out.print("Seleccione la carrera: ");
+        ArchivoCarrera.mostrar();
+        String carreras = teclado.nextLine();
+
+
+
+        Profesor profesor = new Profesor(codigo, cedula, nombre, apellido, fechaNacimiento, telefono, direccion, carreras, materias)
+*/
+    }
     public void registrarEstudiante(){
         Scanner teclado = new Scanner(System.in);
         System.out.println("LLenar el siguiente formulario");
@@ -71,12 +115,25 @@ public class Secretario extends Persona{
         System.out.print("Materia por semestre: ");
         int materaPorSemestres = teclado.nextInt();
 
-        Estudiante estudiante = new Estudiante(codigo, cedula, nombre, apellido, fechaNacimiento, telefono,
+        Estudiante estudiante_nuevo = new Estudiante(codigo, cedula, nombre, apellido, fechaNacimiento, telefono,
          direccion, carrera, semestre, fechaInicio, fechaFinalizacion, materaPorSemestres);
         
-        ArchivoEstudiantes.guardar(estudiante);
+        ArchivoEstudiantes.guardar(estudiante_nuevo);
     }
 
+    public void registrarCarreras(){
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("LLenar el siguiente formulario");
+        System.out.print("Nombre de Carrera: ");
+        String nombreCarrera = teclado.nextLine();
+
+        System.out.print("Codigo de Carrera: ");
+        String codigoCarrera = teclado.nextLine();
+
+        Carrera carrera = new Carrera(nombreCarrera, codigoCarrera);
+        ArchivoCarrera.guardar(carrera);
+
+    }
     public Carrera getCarrera() {
         return carrera;
     }
@@ -119,4 +176,6 @@ public class Secretario extends Persona{
         turnos[0] = new Turno(1);
         turnos[1] = new Turno(2);
     }
+
+    public Secretario(){}
 }

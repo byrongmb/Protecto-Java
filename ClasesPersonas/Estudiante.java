@@ -1,9 +1,11 @@
 /*Estudiante --> Persona*/
 package ClasesPersonas;
+import java.io.Serializable;
+
 import ClasesCarrera.*;
 import Utilidades.Fecha;
 
-public class Estudiante extends Persona{
+public class Estudiante extends Persona implements Serializable{
     private Carrera carrera = new Carrera();
     private int semestre;
     private Fecha fechaInicio;

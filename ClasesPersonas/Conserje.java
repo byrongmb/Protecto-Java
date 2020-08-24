@@ -1,9 +1,12 @@
 package ClasesPersonas;
+
+import java.io.Serializable;
+
 import ClasesCarrera.Carrera;
 import ClasesCarrera.Turno;
 import Utilidades.Fecha;
 
-public class Conserje extends Persona{
+public class Conserje extends Persona implements Serializable{
     private Carrera carrera = new Carrera();
     private Fecha fechaInicio = new Fecha();
     private int anioServicio;

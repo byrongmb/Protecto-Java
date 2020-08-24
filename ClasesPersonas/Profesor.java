@@ -1,12 +1,18 @@
 /*Profesore --> Persona*/
 package ClasesPersonas;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import ClasesCarrera.*;
 import Utilidades.Fecha;
 
-public class Profesor extends Persona {
+public class Profesor extends Persona implements Serializable{
     private ArrayList<Carrera> carreras = new ArrayList<>();
     private ArrayList<Materia> materias = new ArrayList<>();
+
+    public void mostrar(){
+        System.out.println("Nombre Profesor: " + getNombre());
+    }
 
     public ArrayList<Carrera> getCarreras() {
         return carreras;

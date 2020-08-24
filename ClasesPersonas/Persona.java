@@ -1,8 +1,10 @@
 /*Superclase*/
 package ClasesPersonas;
+import java.io.Serializable;
+
 import Utilidades.Fecha;
 
-public class Persona {
+public class Persona implements Serializable{
     private String codigo;
     private String cedula;
     private String nombre;

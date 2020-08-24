@@ -2,14 +2,16 @@
 una sola carrera; Tipo relación 1:N*/
 package ClasesCarrera;
 
-public class Carrera {
+import java.io.Serializable;
+
+public class Carrera implements Serializable{
     private String nombreCarrera;
     private String codigoCarrera;
 
     public Carrera() {
         /* Constructor Vacio */
     }
-
+    
     public String getCodigoCarrera() {
         return codigoCarrera;
     }
